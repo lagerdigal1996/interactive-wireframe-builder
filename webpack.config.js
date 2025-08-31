@@ -27,4 +27,6 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  // Add context for module resolution and entry point
+  context: path.resolve(__dirname, 'src'),
 };
