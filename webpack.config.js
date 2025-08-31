@@ -3,8 +3,8 @@ const path = require('path');
 module.exports = {
   entry: './src/index.js', // Entry point of the application
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js', // Output filename for the bundle
+    path: path.resolve(__dirname, 'dist'), // Output directory
   },
   module: {
     rules: [
@@ -12,21 +12,20 @@ module.exports = {
         test: /\.jsx?$/, // Match both .js and .jsx files
         exclude: /node_modules/,  // Exclude node_modules directory
         use: {
-          loader: 'babel-loader',
+          loader: 'babel-loader', // Use Babel loader for transpiling
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
+            presets: ['@babel/preset-env', '@babel/preset-react'], // Babel presets for JavaScript and React
           },
         },
       },
     ],
   },
   devServer: {
-    static: './dist',
-    port: 3000,
+    static: './dist', // Serve static files from the dist directory
+    port: 3000, // Port for the development server
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx'], // File extensions to resolve
   },
-  // Add context for module resolution and entry point
-  context: path.resolve(__dirname, 'src'),
+  context: path.resolve(__dirname, 'src'), // Add context for module resolution and entry point
 };
