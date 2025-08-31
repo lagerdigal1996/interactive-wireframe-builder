@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.js', // Entry point of the application
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
@@ -10,7 +10,7 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/, // Match both .js and .jsx files
-        exclude: /node_modules/,
+        exclude: /node_modules/,  // Exclude node_modules directory
         use: {
           loader: 'babel-loader',
           options: {
